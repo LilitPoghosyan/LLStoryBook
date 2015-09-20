@@ -394,7 +394,7 @@ namespace StoryBook.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return Redirect(@"https://flat-club.com");
         }
 
         //
@@ -451,7 +451,7 @@ namespace StoryBook.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Stories");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

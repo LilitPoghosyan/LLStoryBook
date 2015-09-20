@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Domain.Context;
 using Domain.Entities;
 using Domain.Concrete;
+using Microsoft.AspNet.Identity;
 
 namespace StoryBook.Controllers
 {
@@ -17,12 +18,14 @@ namespace StoryBook.Controllers
         private StoryBookRepository<Group> db = new StoryBookRepository<Group>();
 
         // GET: Groups
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.GetItems().ToList());
         }
 
         // GET: Groups/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +41,7 @@ namespace StoryBook.Controllers
         }
 
         // GET: Groups/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -61,6 +65,7 @@ namespace StoryBook.Controllers
         }
 
         // GET: Groups/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +97,7 @@ namespace StoryBook.Controllers
         }
 
         // GET: Groups/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

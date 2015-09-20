@@ -9,42 +9,12 @@
 <div>
     <h4>Story</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.User.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostedOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostedOn)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StoryID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="card card-block">
+        <h4 class="card-title">@Html.DisplayNameFor(model => model.Title)</h4>
+        <p class="card-text">@Html.DisplayNameFor(model => model.Content)</p>
+        <p class="card-text">@Html.DisplayNameFor(model => model.Description)</p>
+        <p class="card-text">@Html.DisplayNameFor(model => model.PostedOn)</p>
+        <a href="#" class="btn btn-primary" @Html.ActionLink("Edit", "Edit", new { id = Model.StoryID })</a>
+        <a href="#" class="btn btn-primary"@Html.ActionLink("Back to List", "Index")</a>
+    </div>
